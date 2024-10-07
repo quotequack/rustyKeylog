@@ -25,8 +25,8 @@ fn main() -> io::Result<()> {
         std::process::exit(0);
     }
     let eventtype: String = match event.event_type {
-        EventType::KeyPress(key) => format!("{:?}", key),
-        EventType::KeyRelease(key) => format!("{:?}", key),
+        EventType::KeyPress(key) => format!("{:?}\n", key),
+        EventType::KeyRelease(key) => format!("{:?}\n", key),
         EventType::MouseMove {x, y} => format!("MouseMove({},{})\n", x, y),
         EventType::ButtonPress(button) => format!("Mouse button pressed: {:?}\n", button),
         EventType::ButtonRelease(button) => format!("Mouse button released: {:?}\n", button),
